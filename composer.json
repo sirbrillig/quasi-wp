@@ -1,0 +1,26 @@
+{
+    "name": "sirbrillig/quasi-wp",
+    "description": "Mocked versions of most WordPress functions",
+    "type": "library",
+    "keywords": ["phpunit", "mocking", "stubs", "spies", "spy", "wordpress"],
+    "homepage": "https://github.com/sirbrillig/quasi-wp",
+    "require": {
+        "php": ">=5.3.0",
+        "phpunit/phpunit": "^5.2"
+    },
+    "require-dev": {
+        "sirbrillig/spies": "^1.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-0": {
+            "QuasiWP": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Payton Swick",
+            "email": "payton@foolord.com"
+        }
+    ]
+}
