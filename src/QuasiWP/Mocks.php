@@ -1,7 +1,7 @@
 <?php
 namespace QuasiWP;
 
-class Functions {
+class Mocks{
 	public function mock_functions( $functions_to_mock ) {
 		foreach( $functions_to_mock as $function_name ) {
 			\Spies\mock_function( $function_name );
@@ -248,7 +248,7 @@ class Functions {
 
 	public function mock_wpdb() {
 		global $wpdb;
-		$wpdb = mock_object()->and_ignore_missing();
+		$wpdb = \Spies\mock_object()->and_ignore_missing();
 		$wpdb->posts = 'posts';
 		$wpdb->postmeta = 'postmeta';
 	}
