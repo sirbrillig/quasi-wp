@@ -83,15 +83,6 @@ class Mocks{
 		} );
 	}
 
-	public function mock_wp_themes() {
-		\Spies\mock_function( 'get_stylesheet' )->and_return( function() {
-			return get_option( 'stylesheet' );
-		} );
-		\Spies\mock_function( 'switch_theme' )->and_return( function( $slug ) {
-			return update_option( 'stylesheet', $slug );
-		} );
-	}
-
 	public function mock_wp_theme_mods() {
 		\Spies\mock_function( 'get_theme_mods' )->and_return( function() {
 			$option = 'theme_mods_' . get_stylesheet();

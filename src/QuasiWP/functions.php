@@ -11,8 +11,10 @@ function mock_wp() {
 	$blog = new BlogSwitch();
 	$blog->mock_blog_switch();
 
+	$themes = new Themes();
+	$themes->mock_themes();
+
 	$functions->mock_wpdb();
-	$functions->mock_wp_themes();
 	$functions->mock_wp_actions();
 	$functions->mock_wp_filters();
 	$functions->mock_wp_utilities();
