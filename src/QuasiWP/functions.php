@@ -6,7 +6,10 @@ function mock_wp() {
 	$functions = new Mocks();
 
 	$functions->mock_wpdb();
-	$functions->mock_wp_options();
+
+	$options = new Options();
+	$options->mock_options();
+
 	$functions->mock_wp_themes();
 	$functions->mock_wp_actions();
 	$functions->mock_wp_filters();
