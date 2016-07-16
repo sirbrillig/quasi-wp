@@ -19,3 +19,9 @@ function mock_wp() {
 	$functions->mock_wp_misc();
 	$functions->mock_current_time();
 }
+
+function mock_functions( $functions_to_mock ) {
+	foreach( $functions_to_mock as $function_name ) {
+		\Spies\mock_function( $function_name );
+	}
+}

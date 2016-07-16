@@ -2,12 +2,6 @@
 namespace QuasiWP;
 
 class Mocks{
-	public function mock_functions( $functions_to_mock ) {
-		foreach( $functions_to_mock as $function_name ) {
-			\Spies\mock_function( $function_name );
-		}
-	}
-
 	public function mock_wp_misc() {
 		\Spies\mock_function( 'get_posts' )->and_return( [] );
 		\Spies\mock_function( 'wp_get_nav_menus' )->and_return( [] );
@@ -17,7 +11,7 @@ class Mocks{
 		\Spies\mock_function( 'wp_get_object_terms' )->and_return( [] );
 		\Spies\mock_function( 'untrailingslashit' )->and_return( \Spies\passed_arg( 0 ) );
 		\Spies\mock_function( 'wpcom_is_theme_demo_site' )->and_return( true );
-		$this->mock_functions( [
+		mock_functions( [
 			'a8c_irc',
 			'add_post_meta',
 			'current_user_can',
