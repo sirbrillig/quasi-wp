@@ -15,12 +15,3 @@ class WP_Error {
 		return $this->message;
 	}
 }
-
-class Mock_Theme {
-	public function __construct( $exists ) {
-		$this->exists = $exists;
-	}
-	public function exists() {
-		return $this->exists;
-	}
-}
