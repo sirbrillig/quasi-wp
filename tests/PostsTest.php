@@ -37,4 +37,19 @@ class PostsTest extends TestCase {
 		$this->assertEquals( 2, $res );
 	}
 
+	public function test_mock_posts_lets_get_post_return_a_post_object_by_default() {
+		$this->posts->mock_posts();
+		$post1 = [ 'ID' => 1, 'post_content' => 'hello' ];
+		 wp_insert_post( $post1 );
+		$res = get_post( 1 );
+		$this->assertEquals( 'hello', $res->post_content );
+	}
+
+	public function test_mock_posts_lets_get_post_return_a_post_array_if_requested() {
+		$this->posts->mock_posts();
+		$post1 = [ 'ID' => 1, 'post_content' => 'hello' ];
+		 wp_insert_post( $post1 );
+		$res = get_post( 1, ARRAY_A );
+		$this->assertEquals( 'hello', $res['post_content'] );
+	}
 }
