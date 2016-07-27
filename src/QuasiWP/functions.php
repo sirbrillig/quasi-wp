@@ -14,6 +14,9 @@ function mock_wp() {
 	$themes = new Themes();
 	$themes->mock_themes();
 
+	$posts = new Posts();
+	$posts->mock_posts();
+
 	$functions->mock_wpdb();
 	$functions->mock_wp_actions();
 	$functions->mock_wp_filters();
